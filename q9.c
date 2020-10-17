@@ -5,14 +5,11 @@ int main()
 {
 	int n = 1000;
 	for(int a=1;a<n;a++){
-		for(int b=a;b<n;b++){
-			for(int c=b;c<n;c++){
+		for(int b=1;b<n-a;b++){
+			int c = 1000 - (a+b) ;
 				if((a*a)+(b*b)==(c*c)){
-					if(a+b+c==1000){
 						printf("%d\n",a*b*c);
 //						printf("%d\n%d\n%d\n",a,b,c);
-					}
-				}
 			}
 		}
 	}
