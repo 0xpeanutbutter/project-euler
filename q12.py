@@ -21,3 +21,4 @@ while 1 :
         print(num,f)
         break
     n += 1
+
