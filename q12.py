@@ -1,19 +1,24 @@
-import time
 from math import sqrt
+n = 500
 
-def divisors(n):
-    divs = {1,n}
-    for i in range(2,int(sqrt(n))+1):
-        if n%i == 0:
-            divs.update((i,n//i))
-    return divs
+def getNumFactors(x) :
+    ans = 0
+    sq = sqrt(x)
+    r = int(sq // 1 + 1)
 
-s = time.time()
-for i in range(1000000):
-    triangle = int((i*(i+1))/2)
-    divs = divisors(triangle)
-    if len(divs)>500:
-        print(triangle)
+    for i in range(1,r) :
+        if not x%i :
+            if i == sq :
+                ans += 1
+            else:
+                ans += 2
+    return ans 
+
+while 1 :
+    num = (n*(n+1)) // 2
+    f = getNumFactors(num)
+    if f >= 500 :
+        print(num,f)
         break
+    n += 1
 
-print(time.time()-s) # prints the execution time
